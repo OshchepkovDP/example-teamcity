@@ -9,10 +9,18 @@ public class WelcomerTest {
 	
 	private Welcomer welcomer = new Welcomer();
 
+        @Test
+        public void testGetHunterReplyContainsHunter() {
+                Welcomer welcomer = new Welcomer();
+                String reply = welcomer.getHunterReply();
+                assertTrue("Reply should contain 'hunter'", reply.toLowerCase().contains("hunter"));
+        }
+
 	@Test
 	public void welcomerSaysWelcome() {
 		assertThat(welcomer.sayWelcome(), containsString("Welcome"));
 	}
+
 	@Test
 	public void welcomerSaysFarewell() {
 		assertThat(welcomer.sayFarewell(), containsString("Farewell"));
